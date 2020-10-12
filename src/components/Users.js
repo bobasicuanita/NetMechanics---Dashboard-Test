@@ -116,7 +116,6 @@ const Users = () => {
         // helper variables
         let extractKeys = [];
         let finalTableKeys = [];
-        console.log(data);
 
         if (data.length !== 0) {
             // take the keys of the object and insert them into an array capitalized
