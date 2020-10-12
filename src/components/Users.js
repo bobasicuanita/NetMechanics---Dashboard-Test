@@ -116,22 +116,25 @@ const Users = () => {
         // helper variables
         let extractKeys = [];
         let finalTableKeys = [];
+        console.log(data);
 
-        // take the keys of the object and insert them into an array capitalized
-        extractKeys = Object.keys(data[0]).map(el => el.toUpperCase());
+        if (data.length !== 0) {
+            // take the keys of the object and insert them into an array capitalized
+            extractKeys = Object.keys(data[0]).map(el => el.toUpperCase());
 
-        // find those who have _ and change it to space
-        for (let i = 0; i < extractKeys.length; i++) {
-            if (extractKeys[i].includes('_')) {
-
-                finalTableKeys = [...finalTableKeys, extractKeys[i].split('_').join(' ')];
-            } else {
-                finalTableKeys = [...finalTableKeys, extractKeys[i]];
+            // find those who have _ and change it to space
+            for (let i = 0; i < extractKeys.length; i++) {
+                if (extractKeys[i].includes('_')) {
+                    finalTableKeys = [...finalTableKeys, extractKeys[i].split('_').join(' ')];
+                } else {
+                    finalTableKeys = [...finalTableKeys, extractKeys[i]];
+                }
             }
+
+            // set table headers
+            setTableHeaders(finalTableKeys);
         }
 
-        // set table headers
-        setTableHeaders(finalTableKeys);
     }
 
     useEffect(() => {
@@ -202,7 +205,7 @@ const Users = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <TableData handleClick={handleInputSelect} data={response} />
+                                {response.length === 0 ? <h4>Your request returned no results.</h4> : <TableData handleClick={handleInputSelect} data={response} />}
                             </tbody>
                         </table>
                     </div>
