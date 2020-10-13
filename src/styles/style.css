@@ -326,19 +326,16 @@ h4 {
 	padding: 10px 20px;
 }
 
-tbody {
-	text-align: center;
-}
-
-tbody h4 {
-	margin-top: 20px;
-}
-
 #user-table {
 	text-align: left;
 	border-collapse: collapse;
 	width: 98%;
 	margin: 30px 15px 0 15px;
+}
+
+#user-table h4 {
+	margin-top: 20px;
+	text-align: center;
 }
 
 .th-item {

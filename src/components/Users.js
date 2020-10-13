@@ -203,9 +203,7 @@ const Users = () => {
                                     <th className='th-item'>{tableHeaders[4]}</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                {response.length === 0 ? <h4>Your request returned no results.</h4> : <TableData handleClick={handleInputSelect} data={response} />}
-                            </tbody>
+                            {response.length === 0 ? <h4>Your request returned no results.</h4> : <TableData handleClick={handleInputSelect} data={response} />}
                         </table>
                     </div>
                 </>
